@@ -4,9 +4,8 @@ using namespace std;
 class Node{
     public:
     int data;
-   // Node* prev; doubly linked list
     Node* next;
-}
+};
 class LinkedList{
     Node *head;
     public:
@@ -20,9 +19,10 @@ class LinkedList{
     void insertAtPosition(int item, int posi);
     void deleteAtPosition(int posi);
     void display();
-}
+};
+
 void LinkedList:: insertBeginning(int item){
-    Node newNode = new Node();
+    Node *newNode = new Node();
     newNode->data=item;
     if(head==nullptr){
         head=newNode;
@@ -33,8 +33,9 @@ void LinkedList:: insertBeginning(int item){
         head=newNode;
     }
 }
+
 void LinkedList:: insertEnd(int item){
-    Node newNode = new Node();
+    Node *newNode = new Node();
     newNode->data=item;
     if(head==nullptr){
         head=newNode;
