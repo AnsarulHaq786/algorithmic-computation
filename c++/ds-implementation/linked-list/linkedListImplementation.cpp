@@ -65,6 +65,7 @@ void LinkedList:: deleteBegining(){
         delete temp;
     }
 }
+
 void LinkedList:: deleteEnd(){
     if(head==nullptr){
         cout<<"Empty list!";
@@ -83,6 +84,7 @@ void LinkedList:: deleteEnd(){
         delete temp;
     }
 }
+
 void LinkedList:: display(){
     Node* temp=head;
     while(temp->next!=nullptr){
@@ -91,7 +93,31 @@ void LinkedList:: display(){
     delete temp;
 }
 
-// void insertAtPosition(int item, int posi);
+void LinkedList::insertAtPosition(int item, int posi) {
+    Node* newNode = new Node();
+    newNode->data = item;
+    if(posi==1) {
+        newNode->next = head;
+        head = newNode;
+        return;
+    }
+    Node* temp = head;
+    for (int i=1; i<posi-1; i++) {
+        if(temp==nullptr) {
+            cout<<"position out of bound!";
+            delete newNode;
+            return;
+        }
+        temp=temp->next;
+    }
+    if(temp==nullptr) {
+        cout<<"position couldn't exist!"<< endl;
+        delete newNode;
+        return;
+    }
+    newNode->next=temp->next;
+    temp->next = newNode;
+}
 // void deleteSpecific(int data);
 
 int main() {
