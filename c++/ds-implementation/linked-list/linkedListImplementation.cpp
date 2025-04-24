@@ -119,25 +119,28 @@ void LinkedList::insertAtPosition(int item, int posi) {
     temp->next = newNode;
 }
 void LinkedList:: deleteSpecific(int data) {
-    Node *temp1=head;
-    Node *temp2=head;
     if(head==nullptr) {
         cout<<"Empty list!";
         return;
     }
-    else if(temp1->data==data) {
-        head=temp1->next;
+    if(head->data==data) {
+        Node *temp=head;
+        head=head->next;
+        delete temp;
+        return;
     }
-    while(temp2->data!=data) {
-        temp1=temp1->next;
-        temp2=temp1->next;
-        if(temp2==nullptr) {
-            cout<<"Data not found!";
-        }
+    Node* temp1=head;
+    Node* temp2=nullptr;
+    while(temp1->data!=data && temp1!=nullptr) {
+        temp2=temp1;
+        temp1=temp1->next; 
     }
-    temp1->next=temp2->next;
+    if(temp1==nullptr) {
+        cout<<"Data not found!";
+        return;
+    }
+    temp2->next=temp1->next;
     delete temp1;
-    delete temp2;
 }
 
 int main() {
