@@ -87,8 +87,9 @@ void LinkedList:: deleteEnd(){
 
 void LinkedList:: display(){
     Node *temp=head;
-    while(temp->next!=nullptr){
-        cout<<temp->data<<endl;
+    while(temp!=nullptr){
+        cout<<temp->data<<" "<<endl;
+        temp=temp->next;
     }
     delete temp;
 }
@@ -148,7 +149,9 @@ int main() {
     l1.insertBeginning(11);
     l1.insertEnd(22);
     l1.insertEnd(33);
-    l1.insertBeginning(00);
+    l1.insertBeginning(5);
+    l1.deleteSpecific(22);
+    l1.insertAtPosition(12, 2);
     l1.display();
     return 0;
 }
