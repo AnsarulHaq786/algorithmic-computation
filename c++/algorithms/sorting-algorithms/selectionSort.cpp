@@ -15,8 +15,9 @@ void selectionSort(int arr[], int n) {
 
 int main() {
     int arr[7]={5, 10, 3, 12, 88, 1, 11};
-    selectionSort(arr, 7);
-    for (int i=0; i<7; i++)
+    int length=sizeof(arr)/sizeof(arr[0]);
+    selectionSort(arr, length);
+    for (int i=0; i<length; i++)
         cout<<arr[i]<<" ";
     return 0;
 }
