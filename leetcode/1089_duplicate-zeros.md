@@ -1,5 +1,5 @@
 
-## 1089_duplicate-zeros
+## [1089_duplicate-zeros](https://leetcoede.com/duplicate-zeros)
 
 **siplified problem statement:**
 given a fixed length integer array,
