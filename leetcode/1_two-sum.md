@@ -29,3 +29,25 @@ public:
     }
 };
 ```
+
+> if array is sorted,
+```cpp
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int i=0, j=nums.size()-1, sum=0;
+        vector<int> ans;
+        while(i<j){
+            sum=nums[i]+nums[j];
+            if(sum==target)
+                return {i,j};
+            else if(sum>target)
+                j--;
+            else
+                i++;
+        }
+        return {};
+    }
+};
+
+```
