@@ -12,7 +12,7 @@ Output: [1,0,0,2,3,0,0,4]
 Explanation: After calling your function, the input array is modified to: [1,0,0,2,3,0,0,4]
 ```
 
-
+**brute force**
 ```cpp
 class Solution {
 public:
@@ -26,6 +26,26 @@ public:
                 i++;
             }
         }
+    }
+};
+```
+
+**two pointer**
+```cpp
+class Solution {
+public:
+    void duplicateZeros(vector<int>& arr) {
+        int n=arr.size();
+        vector<int> newArr(n);
+        
+        int i=0, j=0;
+        while(j<n) {
+            newArr[j++]=arr[i];
+            if(arr[i]==0 && j<n) newArr[j++]=0;
+            i++;
+        }
+        for(int i=0; i<n; i++) arr[i]=newArr[i];
+        
     }
 };
 ```
