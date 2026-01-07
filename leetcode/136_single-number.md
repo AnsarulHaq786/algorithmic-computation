@@ -1,25 +1,28 @@
+## [136_single-number](https://leetcode.com/problems/single-number/description/)
 
-#include<iostream>
-using namespace std;
+**simplified problem statement:**
+given and non empty array, find the single number whose duplicate does not exist
 
-int singleNumber(vector<int>& nums) {
-    sort(nums.begin(), nums.end());
-    int n=nums.size();
-    if(n==1) return nums[0];
-    vector<int> duplicacy;
-    for(int i=0; i<n-1; i++) {
-        int x=nums[i]^nums[i+1];
-        duplicacy.push_back(x);
-        if(x) return nums[i];
-        i++;
+```
+Input: nums = [2,2,1]
+Output: 1
+```
+
+```cpp
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int n=nums.size();
+        if(n==1) return nums[0];
+        vector<int> duplicacy;
+        for(int i=0; i<n-1; i++) {
+            int x=nums[i]^nums[i+1];
+            duplicacy.push_back(x);
+            if(x) return nums[i];
+            i++;
+        }
+        return nums[n-1];
     }
-    return nums[n-1];
-}
-
-int main() {
-    vector<int> arr={2,2,1};
-    int ans= singleNumber(arr);
-    cout<<ans;
-    return 0;
-}
-   
+};
+```

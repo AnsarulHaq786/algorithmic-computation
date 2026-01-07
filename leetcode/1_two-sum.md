@@ -1,6 +1,6 @@
 ## [1_two-sum](https://leetcode.com/problems/two-sum/)
 
-**siplified problem statement:**
+**simplified problem statement:**
 given an integer array,
 return the two indices that sums to the target
 
