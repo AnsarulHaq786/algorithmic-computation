@@ -10,7 +10,7 @@ using namespace std;
 
 int main() {
 
-    for(int i=1; i<=4; i++) {
+    for(int i=1; i<4; i++) {
         for(int k=4-i; k>0; k--) {
             cout<<" ";
         }
